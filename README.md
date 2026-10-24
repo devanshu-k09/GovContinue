@@ -1,11 +1,11 @@
 # GovContinue - Government Institutional Knowledge Continuity System
 
-[![Project Status: Specification & Architecture](https://img.shields.io/badge/Status-Specification%20%26%20Architecture-blue.svg)](#13-current-project-status)
-[![Domain](https://img.shields.io/badge/Domain-GovTech%20%2F%20Knowledge%20Management-green.svg)](#2-project-overview)
-[![Academic](https://img.shields.io/badge/SIH%202026-MCA%20SAPM%20Design-orange.svg)](#15-contributors)
-[![Python](https://img.shields.io/badge/Python-3.11%2B-blue?logo=python)](#9-prerequisites)
-[![Node.js](https://img.shields.io/badge/Node.js-v20%2B%20%2F%20v24%2B-green?logo=node.js)](#9-prerequisites)
-[![License: Not Specified](https://img.shields.io/badge/License-Not%20Specified-lightgrey.svg)](#16-license)
+[![Project Status: Specification & Architecture](https://img.shields.io/badge/Status-Specification%20%26%20Architecture-blue.svg)](#12-current-project-status)
+[![Domain](https://img.shields.io/badge/Domain-GovTech%20%2F%20Knowledge%20Management-green.svg)](#1-project-overview)
+[![Academic](https://img.shields.io/badge/SIH%202026-MCA%20SAPM%20Design-orange.svg)](#14-contributors)
+[![Python](https://img.shields.io/badge/Python-3.11%2B-blue?logo=python)](#8-prerequisites)
+[![Node.js](https://img.shields.io/badge/Node.js-v20%2B%20%2F%20v24%2B-green?logo=node.js)](#8-prerequisites)
+[![License: Not Specified](https://img.shields.io/badge/License-Not%20Specified-lightgrey.svg)](#15-license)
 
 > **A secure, evidence-backed institutional knowledge-continuity and AI handover layer for government departments.**
 
@@ -57,7 +57,7 @@ The core issue in government employee handovers is commonly mischaracterized as 
 3. **Repeated Mistakes & Reversals**: Without access to historical rationales and prior failed approaches, incoming personnel risk repeating past procedural errors or inadvertently reversing deliberate policy determinations.
 4. **Lack of Traceable Evidence**: Conventional keyword search engines return lists of isolated documents, forcing officers to manually verify whether a past decision was officially sanctioned or superseded.
 
-`
+```text
 Existing Transition Dilemma:
 Departmental Records Exist  ──▶  Officer Transferred  ──▶  Successor Inherits Raw Files
                                                                   │
@@ -65,7 +65,7 @@ Departmental Records Exist  ──▶  Officer Transferred  ──▶  Successor
                                             ▼                                           ▼
                                  Weeks Spent Re-reading                      Unresolved Issues & Risks
                                  Disconnected Documents                      Overlooked During Transition
-`
+```
 
 ---
 
@@ -85,17 +85,17 @@ The features below are defined based on the project design specifications and ar
 
 | Feature Area | Description | Implementation Status |
 | :--- | :--- | :--- |
-| **Document Ingestion & Processing** | Ingestion pipeline for authorized records (PDFs, inspection reports, orders, minutes), text extraction, and metadata tagging. | Planned |
-| **Knowledge Extraction Engine** | Extraction of core administrative entities: project codes, dates, responsible officers, contractors, decisions, and problem statements. | Planned |
-| **Institutional Knowledge Graph** | Cross-record relational modeling linking projects, officers, contractors, inspections, decisions, and citizen complaints. | Planned |
-| **Chronological Timeline Engine** | Reconstruction of multi-year project milestones, design revisions, sanctions, and site visits in chronological sequence. | Planned |
-| **Decision Intelligence & Tracking** | Structured capture of key decisions, rationales, supporting evidence, and subsequent operational impacts. | Planned |
-| **Pending Work & Risk Detection** | Automated flagging of delayed milestones (>90 days), recurring inspection defects, and unresolved public grievances. | Planned |
-| **Role-Authorized Handover Brief** | Automated briefing dashboard for incoming personnel highlighting critical focus areas upon assuming office. | Planned |
-| **AI / RAG Question Answering** | Context-restricted retrieval-augmented generation allowing officers to query project history with verbatim citations. | Planned |
-| **Strict Evidence Attribution** | Verification mechanism ensuring every AI statement references document source, date, and section (preventing hallucination). | Planned |
-| **Role-Based Access Control (RBAC)** | Access enforcement at the project and department level prior to vector search and model retrieval. | Planned |
-| **Comprehensive Audit Logging** | Immutable logging of authentication, document views, AI queries, and data access for compliance. | Planned |
+| **Document Ingestion & Processing** | Ingestion pipeline for authorized records (PDFs, inspection reports, orders, minutes), text extraction, and metadata tagging. | `Planned` |
+| **Knowledge Extraction Engine** | Extraction of core administrative entities: project codes, dates, responsible officers, contractors, decisions, and problem statements. | `Planned` |
+| **Institutional Knowledge Graph** | Cross-record relational modeling linking projects, officers, contractors, inspections, decisions, and citizen complaints. | `Planned` |
+| **Chronological Timeline Engine** | Reconstruction of multi-year project milestones, design revisions, sanctions, and site visits in chronological sequence. | `Planned` |
+| **Decision Intelligence & Tracking** | Structured capture of key decisions, rationales, supporting evidence, and subsequent operational impacts. | `Planned` |
+| **Pending Work & Risk Detection** | Automated flagging of delayed milestones (>90 days), recurring inspection defects, and unresolved public grievances. | `Planned` |
+| **Role-Authorized Handover Brief** | Automated briefing dashboard for incoming personnel highlighting critical focus areas upon assuming office. | `Planned` |
+| **AI / RAG Question Answering** | Context-restricted retrieval-augmented generation allowing officers to query project history with verbatim citations. | `Planned` |
+| **Strict Evidence Attribution** | Verification mechanism ensuring every AI statement references document source, date, and section (preventing hallucination). | `Planned` |
+| **Role-Based Access Control (RBAC)** | Access enforcement at the project and department level prior to vector search and model retrieval. | `Planned` |
+| **Comprehensive Audit Logging** | Immutable logging of authentication, document views, AI queries, and data access for compliance. | `Planned` |
 
 > [!NOTE]
 > **Implementation Note**: The repository currently holds the foundational project specifications, software architectural designs (MCA SAPM Design Levels), and system blueprints. Application source code modules are in the pre-implementation / specification phase.
@@ -106,30 +106,23 @@ The features below are defined based on the project design specifications and ar
 
 ### Architectural Flowchart
 
-`mermaid
+```mermaid
 flowchart TD
-    A[Authorized Government Records
-Reports, Orders, Minutes, Grievances] --> B[Data Processing & Classification
-Text Extraction & Metadata Tagging]
-    B --> C[Knowledge Extraction
-Entity & Relationship Detection]
-    C --> D[Institutional Knowledge Model
-Timeline, Decisions, Risks, Pending Items]
+    A[Authorized Government Records\nReports, Orders, Minutes, Grievances] --> B[Data Processing & Classification\nText Extraction & Metadata Tagging]
+    B --> C[Knowledge Extraction\nEntity & Relationship Detection]
+    C --> D[Institutional Knowledge Model\nTimeline, Decisions, Risks, Pending Items]
     D --> E{User Authentication & RBAC Filter}
-    E -->|Authorized Query| F[AI / RAG Retrieval Layer
-Permitted Context Only]
+    E -->|Authorized Query| F[AI / RAG Retrieval Layer\nPermitted Context Only]
     E -->|Unauthorized| G[Access Denied & Audit Logged]
-    F --> H[Evidence Verification Engine
-Attaches Document & Date Citations]
-    H --> I[Officer Handover Dashboard
-Transition Brief, Timeline, Q&A]
-`
+    F --> H[Evidence Verification Engine\nAttaches Document & Date Citations]
+    H --> I[Officer Handover Dashboard\nTransition Brief, Timeline, Q&A]
+```
 
 ### Pipeline Stages
 
 1. **Authorized Ingestion**: Consumes authorized digital records from departmental document repositories.
 2. **Text & Metadata Extraction**: Cleans input files and tags metadata (date, issuing officer, department, classification).
-3. **Knowledge Modeling**: Links related entities into a connected graph (e.g., Officer A managed Project P102 -> Inspection I32 found defect -> Decision D45 paused contractor payment).
+3. **Knowledge Modeling**: Links related entities into a connected graph (e.g., `Officer A` managed `Project P102` -> `Inspection I32` found defect -> `Decision D45` paused contractor payment).
 4. **Pre-Retrieval Authorization**: User authentication and role/project clearance are verified **before** database search or vector retrieval occurs.
 5. **Contextual AI / RAG**: Generates summaries and answers restricted solely to authorized context passages.
 6. **Officer Handover Interface**: Presents the incoming employee with an executive brief, priority pending tasks, historical timeline, and evidence-backed Q&A.
@@ -154,7 +147,7 @@ The system architecture is organized as a layered modular monolith to balance ra
 
 ## 7. Repository Structure
 
-`	ext
+```text
 GovContinue/
 ├── README.md                           # Master project documentation
 ├── docs/                               # System design and architecture specifications
@@ -176,7 +169,7 @@ GovContinue/
 └── data/                               # (Planned) Prototype synthetic data
     ├── raw_documents/                  # Synthetic departmental reports and orders
     └── synthetic_dataset.json          # Mock projects, employees, and inspection logs
-`
+```
 
 ---
 
@@ -185,11 +178,10 @@ GovContinue/
 The following software environments are verified on the development system:
 
 - **Operating System**: Windows / Linux / macOS
-- **Python**: 3.11.x or higher *(verified: Python 3.11.9)*
-- **Node.js**: 20.x or 24.x *(verified: Node v24.13.0)*
-- **Package Managers**: pip (Python), 
-pm *(verified: 11.6.2)*
-- **Version Control**: git *(verified: 2.53.0)*
+- **Python**: `3.11.x` or higher *(verified: Python 3.11.9)*
+- **Node.js**: `v20.x` or `v24.x` *(verified: Node v24.13.0)*
+- **Package Managers**: `pip` (Python), `npm` *(verified: 11.6.2)*
+- **Version Control**: `git` *(verified: 2.53.0)*
 - **Database (Target)**: PostgreSQL 15+ *(with pgvector extension)*
 
 ---
@@ -197,36 +189,36 @@ pm *(verified: 11.6.2)*
 ## 9. Installation & Local Setup
 
 ### 1. Clone the Repository
-`ash
+```bash
 git clone https://github.com/devanshu-k09/GovContinue.git
 cd GovContinue
-`
+```
 
 ### 2. Backend Environment Setup (Planned Initializer)
-`powershell
+```powershell
 # Create a Python virtual environment
 python -m venv venv
 
 # Activate the virtual environment (Windows PowerShell)
-.env\Scripts\Activate.ps1
+.\venv\Scripts\Activate.ps1
 
 # Activate the virtual environment (Linux/macOS)
 # source venv/bin/activate
 
 # Upgrade package management tools
 python -m pip install --upgrade pip
-`
+```
 
 ### 3. Frontend Environment Setup (Planned Initializer)
-`ash
+```bash
 # Navigate to the frontend directory once scaffolded
 cd frontend
 npm install
-`
+```
 
 ### 4. Environment Variables Configuration
-Create a .env file in the root/backend directory based on .env.example:
-`env
+Create a `.env` file in the root/backend directory based on `.env.example`:
+```env
 # Application Settings
 ENVIRONMENT=development
 LOG_LEVEL=INFO
@@ -236,7 +228,7 @@ DATABASE_URL=postgresql://user:password@localhost:5432/govcontinue_db
 
 # Document Storage (Local or S3 compatible)
 STORAGE_BUCKET=govcontinue-documents
-`
+```
 
 > [!WARNING]
 > **Security Guardrail**: Never commit real database credentials, API keys, or operational secrets to public repositories.
@@ -248,18 +240,18 @@ STORAGE_BUCKET=govcontinue-documents
 Once the application service packages are scaffolded, start the local development services:
 
 ### Start Backend API
-`powershell
+```powershell
 # From the backend directory with virtual environment activated:
 uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
-`
-- Interactive Swagger Documentation: http://127.0.0.1:8000/docs
+```
+- Interactive Swagger Documentation: `http://127.0.0.1:8000/docs`
 
 ### Start Frontend Dashboard
-`ash
+```bash
 # From the frontend directory:
 npm run dev
-`
-- Web Application: http://localhost:3000
+```
+- Web Application: `http://localhost:3000`
 
 ---
 
